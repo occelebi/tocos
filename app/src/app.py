@@ -2,6 +2,7 @@ import json
 from flask import Flask
 from prometheus_flask_exporter import PrometheusMetrics
 
+""" Init flask and prometheus client"""
 app = Flask(__name__)
 metrics = PrometheusMetrics(app)
 
