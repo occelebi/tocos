@@ -10,6 +10,7 @@ FROM base
 COPY --from=builder /root/.local /root/.local
 COPY src /app
 
+ENV PATH=/root/.local/bin:$PATH
 WORKDIR /app
 
 CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
