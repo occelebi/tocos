@@ -47,3 +47,13 @@ Get all metrics instrumented by prometheus client:
 ```sh
 curl 'http://localhost:5000/metrics'
 ```
+
+#### After deployment
+
+```
+% curl tocos-alb-1622905611.eu-central-1.elb.amazonaws.com/tocos
+[{"user": "John", "tocos": 100}, {"user": "Sam", "tocos": 200}, {"user": "Cem", "tocos": 300}]%
+% curl tocos-alb-1622905611.eu-central-1.elb.amazonaws.com/tocos/Sam
+{"user": "Sam", "tocos": 200}%                                                                                                                      % curl tocos-alb-1622905611.eu-central-1.elb.amazonaws.com/tocos/Cem
+{"user": "Cem", "tocos": 300}%  
+```
